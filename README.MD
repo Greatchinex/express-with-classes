@@ -12,6 +12,6 @@ When done with setup in your project root folder, simply run the command **yarn 
 
 ### Playground tests
 
-![alt text](https://res.cloudinary.com/greatchinex/image/upload/v1662725285/Screen_Shot_2022-09-09_at_12.55.37_PM_lwvpmz.png)
+![alt text](https://res.cloudinary.com/greatchinex/image/upload/v1662733599/Screen_Shot_2022-09-09_at_3.25.01_PM_htuz89.png)
 
-![alt text](https://res.cloudinary.com/greatchinex/image/upload/v1662725285/Screen_Shot_2022-09-09_at_12.56.49_PM_bbvacg.png)
+![alt text](https://res.cloudinary.com/greatchinex/image/upload/v1662733599/Screen_Shot_2022-09-09_at_3.25.34_PM_tswjld.png)

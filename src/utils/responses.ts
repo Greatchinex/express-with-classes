@@ -25,7 +25,7 @@ export class ApiResponses {
     return res.status(code).json({
       success: true,
       message,
-      payload
+      data: payload
     })
   }
 
@@ -42,7 +42,7 @@ export class ApiResponses {
     return res.status(code).json({
       success: false,
       message,
-      payload
+      data: payload
     })
   }
 }
