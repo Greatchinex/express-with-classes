@@ -1,5 +1,6 @@
 import { RM, SRM, ERM } from '../types/response'
 import { StatusCodes } from 'http-status-codes'
+import Logger from '../config/logger'
 
 export class ApiResponses {
   apiResponse({ req, res, data, error, http_code, log_body }: RM) {
@@ -19,7 +20,7 @@ export class ApiResponses {
   private handleSuccessResponse({ req, res, payload, http_code, message, log_body }: SRM) {
     const logBody = log_body === false ? ['Redacted'] : req.body
     const code = http_code ?? StatusCodes.OK
-    console.log(logBody)
+    Logger.info({ url: req.originalUrl }, `${message}, Body ===> %o`, logBody)
 
     return res.status(code).json({
       success: true,
@@ -31,8 +32,12 @@ export class ApiResponses {
   private handleErrorResponse({ req, res, payload, http_code, message, error, log_body }: ERM) {
     const logBody = log_body === false ? ['Redacted'] : req.body
     const code = http_code ?? StatusCodes.BAD_REQUEST
-    console.log(logBody)
-    console.log(error)
+    Logger.error(
+      { url: req.originalUrl, err: error ?? 'N/A' },
+      `${message}, Body ===> %o, Response ===> %o`,
+      logBody,
+      error?.res?.data ?? 'N/A'
+    )
 
     return res.status(code).json({
       success: false,

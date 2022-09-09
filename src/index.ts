@@ -4,6 +4,7 @@ import { config } from 'dotenv'
 import cors from 'cors'
 
 import routes from './namespaces/index.routes'
+import Logger from './config/logger'
 
 config()
 
@@ -18,5 +19,5 @@ app.get('/', (_, response) => {
 })
 
 app.listen(port, () => {
-  console.log('Server is listening on port ===> ', port)
+  Logger.info('Server is listening on port ===> %s', port)
 })
