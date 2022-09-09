@@ -1,7 +1,7 @@
 import { RM, SRM, ERM } from '../types/response'
 import { StatusCodes } from 'http-status-codes'
 
-export class RequestResponses {
+export class ApiResponses {
   apiResponse({ req, res, data, error, http_code, log_body }: RM) {
     const { message, data: payload } = data
     switch (data.status) {

@@ -34,4 +34,4 @@ type ERM = {
   error?: any
 }
 
-export { RM, SRM, ERM }
+export { RM, SRM, ERM, DataType }
